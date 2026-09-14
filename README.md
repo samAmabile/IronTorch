@@ -51,7 +51,7 @@ make
 * Sigmoid
 
 ```mermaid
-graph TD 
+flowchart TD 
     %% Subgraph 
     subgraph PreProcessing [Pre-Processing]
         direction LR
@@ -61,8 +61,7 @@ graph TD
 
     subgraph Layers [Network Layers]
         direction LR
-        C --> D[Parallel Conv1D]
-        D --> E[ReLU]
+        D[Parallel Conv1D] --> E[ReLU]
         E --> F[Pooling]
         F --> G[Dense]
         G --> H[ReLU]
@@ -72,12 +71,13 @@ graph TD
 
     subgraph Output [Prediction Head]
         direction LR
-        J --> K{Classification}
-        K --> L[Class 0]
+        K{Classification} --> L[Class 0]
         K --> M[Class 1] 
     end
 
-    
+    C --> D
+    J --> K
+
     style PreProcessing fill: #fafafa,stroke:#333,stroke-width:1px
     style Layers fill:#fafafa,stroke:#333,stroke-width:1px
     style Output fill:#fafafa,stroke:#333,stroke-width:1px
