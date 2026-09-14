@@ -51,13 +51,13 @@ make
 * Sigmoid
 
 ```mermaid
-flowchart TD 
-    %% Subgraph 
+flowchart TD
+    %% Subgraphs
     subgraph PreProcessing [Pre-Processing]
         direction LR
-        A((Input Text)) --> B{BPE Tokenizer} 
-        B --> C[Embedding Layer] 
-    end 
+        A((Input Text)) --> B{BPE Tokenizer}
+        B --> C[Embedding Layer]
+    end
 
     subgraph Layers [Network Layers]
         direction LR
@@ -65,14 +65,14 @@ flowchart TD
         E --> F[Pooling]
         F --> G[Dense]
         G --> H[ReLU]
-        H --> I[Dense] 
+        H --> I[Dense]
         I --> J[Sigmoid] 
     end
 
     subgraph Output [Prediction Head]
         direction LR
         K{Classification} --> L[Class 0]
-        K --> M[Class 1] 
+        K --> M[Class 1]
     end
 
     C --> D
