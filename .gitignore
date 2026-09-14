@@ -1,0 +1,12 @@
+data/ 
+cnn_models/
+bpe_models/
+embeddings/
+dead/
+txt/
+
+*.txt
+*.o
+.venv
+
+
