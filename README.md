@@ -55,18 +55,12 @@ flowchart TD
     %% Subgraphs
     subgraph PreProcessing [Pre-Processing]
         direction LR
-        A((Input Text)) --> B{BPE Tokenizer}
-        B --> C[Embedding Layer]
+        A((Input Text)) --> B{BPE Tokenizer} --> C[Embedding Layer]
     end
 
     subgraph Layers [Network Layers]
         direction LR
-        D[Parallel Conv1D] --> E[ReLU]
-        E --> F[Pooling]
-        F --> G[Dense]
-        G --> H[ReLU]
-        H --> I[Dense]
-        I --> J[Sigmoid] 
+        D[Parallel Conv1D] --> E[ReLU] --> F[Pooling] --> G[Dense] --> H[ReLU] --> I[Dense] --> J[Sigmoid]
     end
 
     subgraph Output [Prediction Head]
