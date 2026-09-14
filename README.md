@@ -69,8 +69,7 @@ flowchart TD
         K --> M[Class 1]
     end
 
-    C --> D
-    J --> K
+    PreProcessing --> Layers --> Output
 
     style PreProcessing fill: #fafafa,stroke:#333,stroke-width:1px
     style Layers fill:#fafafa,stroke:#333,stroke-width:1px
